@@ -53,7 +53,26 @@ app.post('/reviews', (req, res) => {
 
     reviews.push(newReview);
     res.status(201).json(newReview);
-})
+});
+
+app.put(`/reviews/:id`, (req, res) => {
+    const reviewId = parseInt(req.params.id);
+    const reviewIndex = reviews.findIndex(r => r.id === reviewId);
+
+    if (reviewIndex === -1) {
+        return res.status(404).json({message:  'Review not Found'});
+    }
+    const {id_film, user, rating, comment} = req.body;
+
+    if (!id_film||!user||!rating||!comment){
+        return res.status(400).json ({message: 'field tidak terisi'});
+    }
+    const updatedReview = {id:reviewId, id_film, user, rating, comment};
+
+    reviews[reviewIndex] = updatedReview;
+    
+    res.status(201).json(updatedReview);
+});
 
 app.listen(PORT, () => {
     console.log(`Server aktif di http://localhost:${PORT}`);

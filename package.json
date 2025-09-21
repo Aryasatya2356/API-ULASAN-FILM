@@ -1,10 +1,11 @@
 {
   "name": "api-ulasan-film",
   "version": "1.0.0",
-  "description": "",
+  "description": "-Wempi Ariyan Saputro (362458302087)\r -Aryasatya Maheswara (362458302082)\r -Restu Sulung Purpangestu (362458302028)\r -M Zulqornain Rofiki (362458302086)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
