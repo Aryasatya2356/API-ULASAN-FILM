@@ -2,9 +2,7 @@ const express = require('express');
 const app = express();
 const PORT = 3300;
 
-app.get('/status', (req, res) =>{
-    res.send('Server API Manajemen Film berjalan!');
-});
+app.use(express.json());
 
 let reviews = [
     {
@@ -25,6 +23,10 @@ let reviews = [
 
 ];
 
+app.get('/status', (req, res) =>{
+    res.send('Server API Manajemen Film berjalan!');
+});
+
 app.get('/reviews', (req,res) => {
     res.json(reviews);
 })
@@ -37,6 +39,21 @@ app.get('/reviews/:id', (req,res) => {
     }
     res.json(ulasan);
 });
+
+app.post('/reviews', (req, res) => {
+    const {id_film, user, rating, comment} = req.body;
+
+    if(!id_film||!user||!rating||!comment){
+        return res.status(400).json({message: 'semua field(id_film, user, rating, comment) harus diisi'});
+    }
+
+    const newId = reviews.length > 0 ? reviews[reviews.length - 1].id + 1: 1;
+
+    const newReview = { id: newId, id_film, user, rating, comment};
+
+    reviews.push(newReview);
+    res.status(201).json(newReview);
+})
 
 app.listen(PORT, () => {
     console.log(`Server aktif di http://localhost:${PORT}`);
