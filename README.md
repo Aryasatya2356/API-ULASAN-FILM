@@ -11,16 +11,16 @@
 API ini adalah layanan internal untuk mengelola ulasan film dari Studio Ghilbi, dengan data film yang di referensikan dari Ghibli API publik.
 
 ## Cara Menjalankan Proyek
-1. Clone Repository ini : `git:clone . . . `
-2. Masuk ke direktori: `cd NAMA_REPO`
-3. Install depedensi: `npm install`
+1. Clone Repository ini : `git:clone https://github.com/Aryasatya2356/API-ULASAN-FILM`
+2. Masuk ke direktori: `cd API-ULASAN-FILM`
+3. Install depedensi: `npm init -y dan npm install express cors `
 4. Jalankan server: `node server.js`
 server akan berjalan di `http://localhost:3300`
 
 ## Daftar EndPoint
 - `GET/status`: Cek Status API.
 - `GET/reviews`: Mengambil Semua ulasan.
-- `GET/reviews/:id`: Mengambil ulasan spesifik.
-- `POST/reviews`: Membuat ulasan Baru.
+- `GET/reviews/:id`: Mengambil ulasan spesifik berdasakan ID.
+- `POST/reviews`: Membuat ulasan Baru dengan Validasi Input.
 - `PUT/reviews`: Memperbarui Alasan.
 - `DELETE/reviews`: Menghapus Ulasan.
