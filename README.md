@@ -18,9 +18,12 @@ API ini adalah layanan internal untuk mengelola ulasan film dari Studio Ghilbi, 
 server akan berjalan di `http://localhost:3300`
 
 ## Daftar EndPoint
-- `GET/status`: Cek Status API.
-- `GET/reviews`: Mengambil Semua ulasan.
-- `GET/reviews/:id`: Mengambil ulasan spesifik berdasakan ID.
+- `GET/status`: Cek Status API Ulasan film.
+- `GET/reviews`: Mengambil Semua ulasan film yang dibuat.
+- `GET/reviews/:id`: Mengambil ulasan film spesifik berdasakan ID.
 - `POST/reviews`: Membuat ulasan Baru dengan Validasi Input.
-- `PUT/reviews`: Memperbarui Alasan.
-- `DELETE/reviews`: Menghapus Ulasan.
+- `PUT/reviews/(id)`: Memperbarui Ulasan berdasarkan id.
+- `DELETE/reviews/(id)`: Menghapus Ulasan berdasarkan id.
+
+Semua endpoint diuji dengan POSTMAN lalu di export dan dimasukkan ke dalam file Koleksi_Pengujian.json
+Cara menjalankannya dengan import file Koleksi_Pengujian.json di POSTMAN
