@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "309f171a-b744-4044-8692-b5e0886259dd",
+		"name": "API Ulasan Film",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48015769",
+		"_collection_link": "https://arsawara-4254628.postman.co/workspace/Peter-coba-api~1f7aa64e-bbcc-4091-8933-1fbaac4e53fa/collection/48015769-309f171a-b744-4044-8692-b5e0886259dd?action=share&source=collection_link&creator=48015769"
+	},
+	"item": [
+		{
+			"name": "Get Ulasan Film",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3300/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ulasan Film By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3300/reviews/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"reviews",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET by ID(ID ulasan tidak ada)",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "POST Ulasan Film",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_film\" : \"86e544fd-79de-4e04-be62-5be67d8dd92e\",\r\n    \"user\" : \"Arya\",\r\n    \"rating\" : \"9/10\",\r\n    \"comment\" : \"bagus\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3300/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST (400 rating hilang dari body)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_film\" : \"86e544fd-79de-4e04-be62-5be67d8dd92e\",\r\n    \"user\" : \"Arya\",\r\n    \"comment\" : \"bagus\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3300/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Ulasan Film",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3300/reviews/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"reviews",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT (400 user hilang dari body)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_film\" : \"ea660b10-85c4-4ae3-8a5f-41cea3648e3e\",\r\n    \"rating\" : \"9/10\",\r\n    \"comment\" : \"bagus\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3300/reviews/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"reviews",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Ulasan Film",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_film\" : \"ea660b10-85c4-4ae3-8a5f-41cea3648e3e\",\r\n    \"rating\" : \"9/10\",\r\n    \"comment\" : \"bagus\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3300/reviews/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"reviews",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE (ID ulasan tidak ada)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_film\" : \"ea660b10-85c4-4ae3-8a5f-41cea3648e3e\",\r\n    \"rating\" : \"9/10\",\r\n    \"comment\" : \"bagus\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3300/reviews/99",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"reviews",
+						"99"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
