@@ -55,6 +55,19 @@ app.post('/reviews', (req, res) => {
     res.status(201).json(newReview);
 });
 
+app.delete(`/reviews/:id`, (req, res) =>{
+    const reviewId=parseInt(req.params.id);
+    const cari = reviews.find(r => r.id === reviewId);
+
+    if(!cari){
+        return res.status(404).json({message: `Review Tidak di temukan`});
+    }
+
+    reviews.splice(cari, 1);
+    res.status(204).send();
+
+});
+
 app.put(`/reviews/:id`, (req, res) => {
     const reviewId = parseInt(req.params.id);
     const reviewIndex = reviews.findIndex(r => r.id === reviewId);
